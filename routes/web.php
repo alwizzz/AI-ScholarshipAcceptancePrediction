@@ -25,5 +25,9 @@ Route::get('/learning/continous_probability', [ItemController::class, 'continous
 Route::get('/learning/prediction', [ItemController::class, 'prediction']);
 Route::get('/about', [ItemController::class, 'about']);
 
+//14124
 //12345
 //12345
+
+// 323232
+//32312421
