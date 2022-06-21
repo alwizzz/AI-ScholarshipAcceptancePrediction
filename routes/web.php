@@ -24,3 +24,5 @@ Route::get('/learning/discrete_probability', [ItemController::class, 'discrete_p
 Route::get('/learning/continous_probability', [ItemController::class, 'continous_probability']);
 Route::get('/learning/prediction', [ItemController::class, 'prediction']);
 Route::get('/about', [ItemController::class, 'about']);
+
+// test
