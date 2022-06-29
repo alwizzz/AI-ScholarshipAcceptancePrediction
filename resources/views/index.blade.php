@@ -2,20 +2,20 @@
 
 @section('content')
 
-    <h1>Scholarship Diagnostic</h1>
+    <h1>Scholarship Predictor</h1>
 
     @if(isset($result))
         <h5>Result: </h5>
         <div autofocus class="alert alert-info mt-3 mS-4 p-4 text-center" role="alert" style="font-size:200%">
-            {{ ($result)? 'You are diagnosed to get a scholarship' : 'You are not diagnosed to get a scholarship' }}
+            {{ ($result)? 'You are predicted to get a scholarship' : 'You are not predicted to get a scholarship' }}
         </div>
     @endif
 
 
-    <h5 class="mb-3">Fill the form below to get diagnosed</h5>
+    <h5 class="mb-3">Fill the form below to get predicted</h5>
 
     <div class="card rounded-3 p-4 border-2 mb-3" style="width:75%">
-        
+
         <form action="/" method="post">
             @csrf
 
@@ -23,7 +23,7 @@
                 <div class="form-group col-md-5">
                     <label for="sks" class="form-label">SKS</label>
                     <div class="mb-3">
-                        <input type="number" class="form-control @error('sks') is-invalid @enderror" id="sks" 
+                        <input type="number" class="form-control @error('sks') is-invalid @enderror" id="sks"
                         name="sks" value="{{ old('sks', $post['sks']) }}" >
                     </div>
                     @error('sks')
@@ -36,7 +36,7 @@
                 <div class="form-group col-md-5">
                     <label for="ipk" class="form-label">IPK</label>
                     <div class="mb-3">
-                        <input type="number" step="any" class="form-control @error('ipk') is-invalid @enderror" id="ipk" 
+                        <input type="number" step="any" class="form-control @error('ipk') is-invalid @enderror" id="ipk"
                         name="ipk" value="{{ old('ipk', $post['ipk']) }}" >
                     </div>
                     @error('ipk')
@@ -82,7 +82,7 @@
                     @enderror
                 </div>
             </div>
-        
+
             <div class="row">
                 <div class="form-group col-md-5">
                     <label for="ikut_organisasi" class="form-label">Ikut Organisasi</label>
@@ -186,7 +186,7 @@
             <div class="form-group col-md-5">
                 <label for="tanggungan" class="form-label">Tanggungan</label>
                 <div class="mb-3">
-                    <input type="number" class="form-control @error('tanggungan') is-invalid @enderror" id="tanggungan" 
+                    <input type="number" class="form-control @error('tanggungan') is-invalid @enderror" id="tanggungan"
                     name="tanggungan" value="{{ old('tanggungan', $post['tanggungan']) }}" >
                 </div>
                 @error('tanggungan')
@@ -200,7 +200,7 @@
             <div class="row mt-3">
                 <div class="col">
                     <button type="submit" name="aksi" class="btn btn-primary">
-                        Diagnose
+                        Predict
                     </button>
                 </div>
             </div>
