@@ -13,7 +13,7 @@ class ItemController extends Controller
     public function index()
     {
         return view('index', [
-            'title' => 'Diagnostic',
+            'title' => 'Predictor',
             'post' => [
                 'jenis_kelamin' => null,
                 'jarak_tempat_tinggal_ke_kampus' => null,
@@ -44,9 +44,9 @@ class ItemController extends Controller
 
         $validatedData = $request->validate($rules);
         // dd($validatedData);
-        
+
         $resultProbabilities = Item::getProbabilities($validatedData);
-        
+
         $result = ($resultProbabilities['positive'] >= $resultProbabilities['negative']) ? true : false;
 
         return view('index', [
@@ -55,7 +55,7 @@ class ItemController extends Controller
             'post' => $validatedData
         ]);
     }
-    
+
     public function about()
     {
         return view('about', [
@@ -71,7 +71,7 @@ class ItemController extends Controller
             'items' => Item::all()
         ]);
     }
-    
+
     public function discrete_probability()
     {
         return view('learning.discrete_probability', [
@@ -79,7 +79,7 @@ class ItemController extends Controller
             'discrete_probabilities' => DiscreteProbability::all()
         ]);
     }
-    
+
     public function continous_probability()
     {
         return view('learning.continous_probability', [
@@ -87,7 +87,7 @@ class ItemController extends Controller
             'continous_probabilities' => ContinousProbability::all()
         ]);
     }
-    
+
     public function prediction()
     {
         $all = Prediction::all();
