@@ -21,7 +21,7 @@
         });
     </script>
     
-    <title>Database Diagnostic</title>
+    <title>Scholarship Predictor</title>
 </head>
 <body>
     @include('partials.navbar')
